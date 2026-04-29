@@ -2,3 +2,6 @@
 /dist
 .env
 .gitignore
+/src/generated/prisma
+
+/generated/prisma
