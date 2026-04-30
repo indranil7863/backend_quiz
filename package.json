@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "watch": "tsc -w",
-    "dev": "nodemon dist/server.js",
+    "dev": "tsx watch src/server.ts",
     "concurrent": "concurrently \"npm run watch\" \"npm run dev\""
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "pg": "^8.20.0",
+    "tsx": "^4.21.0",
     "typescript": "^6.0.3"
   },
   "devDependencies": {

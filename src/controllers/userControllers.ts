@@ -1,9 +1,9 @@
 import type { RequestHandler } from "express";
 import { prisma } from '../lib/prisma.js';
 
-export const getUsers :RequestHandler= (req, res) => {
-   console.log("hello")
-   res.json({ message: "Get all users" });
+export const getUsers :RequestHandler= async (req, res) => {
+   const allUsers = await prisma.user.findMany();
+   res.json({message: allUsers})
 };
 
 export const createUser :RequestHandler= async (req, res) => {
@@ -18,7 +18,7 @@ export const createUser :RequestHandler= async (req, res) => {
       }
    })
    console.log(user)
-   res.json({message: "hi"});
+   res.json({message: user});
    } catch (error) {
       console.log(error)
    }
